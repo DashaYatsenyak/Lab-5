@@ -1,12 +1,20 @@
 #include "pch.h"
 #include "CDataChainSimple.h"
+using namespace std;
 
-
-CDataChainSimple::CDataChainSimple()
+CDataChain::CDataChain()//конструктор Chain
 {
 }
 
+CDataChain::~CDataChain()//деструктор Chain
+{
+	m_sChain.clear();
+}
 
-CDataChainSimple::~CDataChainSimple()
+
+CDataSimple::CDataSimple()//конструктор Simple
+{
+}
+CDataSimple::~CDataSimple()//деструктор Simple
 {
 }
