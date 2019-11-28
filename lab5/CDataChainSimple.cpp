@@ -2,22 +2,27 @@
 #include "CDataChainSimple.h"
 using namespace std;
 
-CDataChain::CDataChain()//конструктор Chain
+//конструктор Chain
+CDataChain::CDataChain()
 {
 }
 
-CDataChain::~CDataChain()//деструктор Chain
+//деструктор Chain
+CDataChain::~CDataChain()
 {
 	m_sChain.clear();
 }
 
-size_t CDataChain::GetLength()//повертає довжину згенерованої послідовності цифр
+//повертає довжину згенерованої послідовності цифр
+size_t CDataChain::GetLength()
 {
 	return m_sChain.length();
 }
 
-int CDataChain::Find(const char* sSubStr, int nPos)//повертає позицію входження підстрічки sSubStr починаючи із nPos.
-{												   // -1, якщо підстрічки не знайдено
+//повертає позицію входження підстрічки sSubStr починаючи із nPos
+// -1, якщо підстрічки не знайдено
+int CDataChain::Find(const char* sSubStr, int nPos)
+{
 	size_t length = strlen(sSubStr);
 	for (size_t i = 0; i < m_sChain.length(); i++)
 	{
@@ -37,11 +42,30 @@ int CDataChain::Find(const char* sSubStr, int nPos)//повертає позицію входження 
 	return -1;
 }
 
+//повертає підстрічку починаючи із nPos довжиною nLength. або до кінця послідовності
+string CDataChain::GetSubStr(int nPos, int nLength)
+{
+	string subStr;
+	if ((nPos >= m_sChain.length()) || ((nPos + nLength) >= m_sChain.length()))
+		return subStr;
+	subStr = m_sChain.substr(nPos, nLength);
+	return subStr;
+}
+
+//повертає всю згенеровану послідовність цифр
+const char* CDataChain::GetFullString()
+{
+	return m_sChain.c_str();
+}
 
 
-CDataSimple::CDataSimple()//конструктор Simple
+
+//конструктор Simple
+CDataSimple::CDataSimple()
 {
 }
-CDataSimple::~CDataSimple()//деструктор Simple
+
+//деструктор Simple
+CDataSimple::~CDataSimple()
 {
 }
