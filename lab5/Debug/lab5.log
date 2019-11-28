@@ -1,3 +1,5 @@
 ﻿  CDataChainSimple.cpp
+  lab5.cpp
+  Generating Code...
 CDataChainSimple.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall CDataSimple::Generate(int,int)" (?Generate@CDataSimple@@UAEXHH@Z)
 C:\Users\Admin\source\repos\DashaYatsenyak\Lab-5\lab5\Debug\lab5.exe : fatal error LNK1120: 1 unresolved externals
