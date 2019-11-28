@@ -69,3 +69,15 @@ CDataSimple::CDataSimple()
 CDataSimple::~CDataSimple()
 {
 }
+
+//Реалізація генератора повної послідовності цифр
+void CDataSimple::Generate(int nDepth, int nMaxLength)
+{
+	while (m_sChain.length() <= (size_t)nMaxLength)
+	{
+		int num = rand() % (10 * nDepth);
+		m_sChain.append(std::to_string(num));
+	}
+	if (m_sChain.length() > nMaxLength)
+		m_sChain.resize(nMaxLength);
+}
